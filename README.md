@@ -1,0 +1,1 @@
+this folder contents the project of the day 1 let do it!
