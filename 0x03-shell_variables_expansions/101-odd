@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -1 | nl | paste - - | cut -f 4
+nl | paste - - | cut -f 4
