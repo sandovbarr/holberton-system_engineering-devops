@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# handle and init manage_my_process
+word=$1
+
+if [ "$word" = start ]
+then
+    . manage_my_process &
+    sudo touch /var/run/my_process.pid
+    sudo chmod 777 /var/run/my_process.pid
+    echo $$ > /var/run/my_process.pid
+    echo manage_my_process started
+elif [ "$word" = stop ]
+then
+    sudo rm /var/run/my_process.pid
+    echo manage_my_process stopped
+    sudo pkill -SIGKILL -f 101-manage_my_process
+elif [ "$word" = restart ]
+then
+    sudo pkill -SIGKILL -f 101-manage_my_process
+    sudo rm /var/run/my_process.pid
+    . manage_my_process &
+    echo $$ > /var/run/my_process.pid
+    echo manage_my_process restarted
+else
+    echo "Usage: manage_my_process {start|stop|restart}"
+fi
