@@ -23,8 +23,6 @@ The concept arose in the 1950s when the American mathematician Stephen Cole Klee
 Regular expressions are used in search engines, search and replace dialogs of word processors and text editors, in text processing utilities such as sed and AWK and in lexical analysis. Many programming languages provide regex capabilities either built-in or via libraries.
 </p>
 
-<iframe width="1688" height="669" src="https://www.youtube.com/embed/528Jc3q86F8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
 ### About
 In this project I play with Regex to learn how to get part of string given as argument ARGV with the regular expression written in Ruby script
 
@@ -46,4 +44,4 @@ In this project I play with Regex to learn how to get part of string given as ar
 
 ### Authors
 
-Jairo Sandoval - [@sandovbarr](https://github.com/sandovbarr)<br>
+Jairo Fernando Sandoval Barrero - [@sandovbarr](https://github.com/sandovbarr)<br>
