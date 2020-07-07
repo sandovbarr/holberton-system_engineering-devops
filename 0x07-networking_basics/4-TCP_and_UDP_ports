@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Write a Bash script that displays listening ports: The flag -l tells netstat to print all listening sockets, -p enables printing of application/program name listening on the port.
+sudo netstat -lp
