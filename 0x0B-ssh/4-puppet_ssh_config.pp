@@ -1,5 +1,5 @@
 # create ssh client config file
-file { '/home/humanimal/.ssh/config':
+file { '~/etc/ssd/config':
     ensure  => file,
     content => 'Host holb_server
     HostName 35.243.207.104
