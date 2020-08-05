@@ -3,5 +3,6 @@
 sudo apt-get -y update
 sudo apt-get -y install nginx
 sudo echo "Holberton School" | sudo tee /var/www/html/index.html
+sudo service nginx start
 sudo sed -i "s/try_files \$uri \$uri\/ =404;/return 301 https:\/\/twitter.com\/home;/" /etc/nginx/sites-available/default
 sudo nginx -s reload
