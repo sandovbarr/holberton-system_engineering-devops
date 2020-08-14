@@ -1,0 +1,4 @@
+#!/usr/bin/env  bash
+# script that sets a coustom header for nginx
+sudo sed -i '45a\        add_header X-Served-By $HOSTNAME;' /etc/nginx/sites-available/default
+sudo systemctl restart nginx.service
