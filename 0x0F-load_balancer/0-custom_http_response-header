@@ -2,11 +2,5 @@
 # script that sets a coustom header for nginx
 sudo apt-get -y update
 sudo apt-get -y install nginx
+sudo sed -i "/listen 80 default_server/a add_header X-Served-By $HOSTNAME;" /etc/nginx/sites-available/default
 sudo service nginx start
-sudo echo "Holberton School for the win!" | sudo tee /var/www/html/index.html
-sudo sed -i "s/location \/ /location \/redirect_me /" /etc/nginx/sites-available/default
-sudo sed -i "s/try_files \$uri \$uri\/ =404;/return 301 https:\/\/twitter.com\/home;/" /etc/nginx/sites-available/default
-sudo echo "Ceci n'est pas une page" | sudo tee /var/www/html/404.html
-sudo sed -i '43a\    location \/ {\n        try_files $uri $uri\/ =404;\n    }\n    error_page 404 /404.html;' /etc/nginx/sites-available/default
-sudo sed -i '45a\        add_header X-Served-By $HOSTNAME;' /etc/nginx/sites-available/default
-sudo service nginx restart
