@@ -9,7 +9,6 @@ frontend http_holb_front
     bind *:80
     mode http
     default_backend holb_back
-
 backend holb_back
     balance roundrobin
     server 1513-web-01 35.243.207.104:80 check
