@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# script that put on the service nginx on 80 port
+sudo sed -i "s/ ipv6only=on;/;/" /etc/nginx/sites-available/default
+sudo rm -rf /etc/nginx/sites-enabled/default
+sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+sudo service nginx restart
