@@ -4,14 +4,13 @@
 sudo add-apt-repository -y ppa:vbernat/haproxy-1.7
 sudo apt update -y
 sudo apt install -y haproxy
-sudo echo "
-frontend http_holb_front
-    bind *:80
-    mode http
-    default_backend holb_back
+echo "frontend http_holb_front
+bind *:80
+mode http
+default_backend holb_back
 backend holb_back
-    balance roundrobin
-    server 1513-web-01 35.243.207.104:80 check
-    server 1513-web-02 35.196.142.184:80 check
+balance roundrobin
+server 1513-web-01 35.243.207.104:80 check
+server 1513-web-02 35.196.142.184:80 check
 " >> /etc/haproxy/haproxy.cfg
-sudo service restart haproxy
+sudo service haproxy restart
