@@ -1,11 +1,8 @@
 #!/usr/bin/env bash
-# nginx must be running as nginx user
-# nginx must be listening on all active IPs on port 8080
-# You cannot use apt-get remove
-# Write a Bash script that configures the container to fit the above requirements
-
+# Run ngnix as nginx
 sudo pkill -f apache2
+chown nginx:nginx /etc/nginx/nginx.conf
 chmod 700 /etc/nginx/nginx.conf
-sed -i -E 's/(listen.*)80 /\18080 /g' /etc/nginx/sites-enabled/default
-sudo -u nginx nginx
-sudo service nginx start
+sudo sed -i "s|listen 80|listen 8080|g" /etc/nginx/sites-available/default
+sudo sed -i "s|80 default_server ipv6only=on|8080 default_server ipv6only=on|g" /etc/nginx/sites-available/default
+sudo -u nginx service nginx start
