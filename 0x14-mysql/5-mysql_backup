@@ -2,8 +2,8 @@
 # create a general backup for all databases on mysql
 
 DATE=$(date +'%d-%m-%Y')
-PASSWORD=$1
-DATABASES=$(mysql -uroot -p"$PASSWORD" -e "SHOW DATABASES;" | tr -d "| " | grep -v Database)
+export MYSQL_PWD=$1
+DATABASES=$(mysql -uroot -h localhost -e "SHOW DATABASES;" | tr -d "| " | grep -v Database)
 
 for db in $DATABASES;
 do
@@ -12,7 +12,7 @@ do
         [[ "$db" != "mysql" ]] &&
         [[ "$db" != _* ]];
     then
-            mysqldump -uroot -p"$PASSWORD" --databases "$db" >> backup.sql
+            mysqldump -uroot -h localhost --databases "$db" >> backup.sql
     fi
 done
 
