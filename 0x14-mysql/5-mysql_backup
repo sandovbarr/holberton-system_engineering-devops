@@ -3,7 +3,7 @@
 
 DATE=$(date +'%d-%m-%Y')
 export MYSQL_PWD=$1
-DATABASES=$(mysql -uroot -h localhost -e "SHOW DATABASES;" | tr -d "| " | grep -v Database)
+DATABASES=$(mysql -uroot -e "SHOW DATABASES;" | tr -d "| " | grep -v Database)
 
 for db in $DATABASES;
 do
@@ -12,7 +12,7 @@ do
         [[ "$db" != "mysql" ]] &&
         [[ "$db" != _* ]];
     then
-            mysqldump -uroot -h localhost --databases "$db" >> backup.sql
+            mysqldump -uroot --databases "$db" >> backup.sql
     fi
 done
 
