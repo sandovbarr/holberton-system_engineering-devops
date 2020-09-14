@@ -50,5 +50,5 @@ try:
                                                           total_tasks))
     for task in tasks_completed:
         print('\t {}'.format(task))
-except:
-    print ('Not a valid argument')
+except Exception:
+    print('Not a valid argument')
