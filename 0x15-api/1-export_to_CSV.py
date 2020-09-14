@@ -19,10 +19,10 @@ try:
         params={
             'userId': id_user})
 
-    usr_nme = user_data.json()['name']
+    usr_nme = user_data.json()['username']
     user_tasks_json = user_tasks.json()
 
-    with open('USER_ID.csv', 'w') as file:
+    with open(id_user + '.csv', 'w') as file:
         writer = csv.writer(
             file,
             delimiter=',',
