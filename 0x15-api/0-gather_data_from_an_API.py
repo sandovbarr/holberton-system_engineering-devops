@@ -48,4 +48,4 @@ if argv[1]:
                                                           len(tasks_completed),
                                                           total_tasks))
     for task in tasks_completed:
-        print('\t{}'.format(task))
+        print('\t {}'.format(task))
