@@ -26,7 +26,8 @@ import requests
 from sys import argv
 
 
-if argv[1]:
+try:
+    int(argv[1])
     id_user = argv[1]
     user_data = requests.get(
         'https://jsonplaceholder.typicode.com/users/{}'.format(id_user))
@@ -49,3 +50,5 @@ if argv[1]:
                                                           total_tasks))
     for task in tasks_completed:
         print('\t {}'.format(task))
+except:
+    print ('Not a valid argument')
