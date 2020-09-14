@@ -26,7 +26,7 @@ import requests
 from sys import argv
 
 
-if argv[1] and argv[1].isnumeric():
+if argv[1]:
     id_user = argv[1]
     user_data = requests.get(
         'https://jsonplaceholder.typicode.com/users/{}'.format(id_user))
