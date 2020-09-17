@@ -29,7 +29,6 @@ def recurse(subreddit, hot_list=[], after=''):
         for key in response.json()['data']['children']:
             hot_list.append(key['data']['title'])
         after_page = response.json()['data']['after']
-        print(len(hot_list))
         if after_page is None:
             return hot_list
         recurse(subreddit, hot_list, after_page)
