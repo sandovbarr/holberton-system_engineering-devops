@@ -32,4 +32,4 @@ def recurse(subreddit, hot_list=[], after=''):
         if after_page is None:
             return hot_list
         recurse(subreddit, hot_list, after_page)
-    return None
+    return (hot_list)
