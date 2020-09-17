@@ -21,7 +21,8 @@ def recurse(subreddit, hot_list=[], after=''):
     '''
     url = 'https://www.reddit.com/r/{}/hot.json?after={}'.format(
         subreddit, after)
-    headers = {'User-agent': 'Mozilla/5.0'}
+    headers = {'User-agent': 'Mozilla/5.0\
+        (Windows NT 10.0; Win64; x64; rv:80.0) Gecko/20100101 Firefox/80.0'}
     response = requests.get(url, headers=headers)
 
     if response.status_code == 200:
