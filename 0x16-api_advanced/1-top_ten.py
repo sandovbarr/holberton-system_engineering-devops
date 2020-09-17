@@ -24,4 +24,4 @@ def top_ten(subreddit):
             if counter == 10:
                 break
     else:
-        return (0)
+        print (None)
