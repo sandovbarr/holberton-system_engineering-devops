@@ -8,7 +8,6 @@
     the function should return None.
 '''
 import requests
-from sys import argv
 
 
 def recurse(subreddit, hot_list=[], after=''):
@@ -20,8 +19,8 @@ def recurse(subreddit, hot_list=[], after=''):
         If no results are found for the given subreddit,
         the function should return None.
     '''
-    url = 'https://www.reddit.com/r/{}/hot.json?after={}'.format(
-        subreddit, after)
+    url = 'https://www.reddit.com/r/{}/hot.json?after={}'.format
+    (subreddit, after)
     headers = {'User-agent': 'Mozilla/5.0'}
     response = requests.get(url, headers=headers)
 
